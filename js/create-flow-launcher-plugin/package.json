@@ -1,0 +1,17 @@
+{
+  "name": "@yusyuriv/create-flow-launcher-plugin",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {},
+  "author": "",
+  "type": "module",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@clack/prompts": "^0.8.2",
+    "replace-in-file": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1"
+  }
+}

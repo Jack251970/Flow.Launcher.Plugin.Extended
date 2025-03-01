@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "target": "ES2018"
+  }
+}

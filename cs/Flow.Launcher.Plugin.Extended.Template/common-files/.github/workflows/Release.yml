@@ -1,0 +1,37 @@
+name: Publish
+
+on:
+  push:
+    paths-ignore:
+      - README.md
+      - .gitignore
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 7.x
+      - name: Get version
+        id: version
+        run: |
+          $version = (cat plugin.json | ConvertFrom-Json).Version
+          ac $env:GITHUB_OUTPUT "version=$version"
+      - name: Build
+        run: |
+          dotnet publish -c Release -o publish
+          rm publish/Flow.Launcher.Plugin.MyFlowPlugin.deps.json
+          7z a Flow.Launcher.Plugin.MyFlowPlugin.zip ./publish/*
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Flow.Launcher.Plugin.MyFlowPlugin.zip
+          tag_name: v${{ steps.version.outputs.version }}

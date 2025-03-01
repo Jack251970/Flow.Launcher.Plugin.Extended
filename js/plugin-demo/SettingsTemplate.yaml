@@ -1,0 +1,21 @@
+#$schema: https://www.flowlauncher.com/schemas/settings-template.schema.json
+body:
+  - type: textBlock
+    attributes:
+      description: ""
+
+  - type: input
+    attributes:
+      name: "name"
+      defaultValue: yes
+
+  - type: dropdown
+    attributes:
+      name: "dropdown"
+      options:
+        - string
+        - 1
+        - 2
+        - true
+        - yes
+        - no

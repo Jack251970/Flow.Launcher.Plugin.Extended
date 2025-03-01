@@ -1,0 +1,12 @@
+{
+  "ID": "{{id}}",
+  "ActionKeyword": "{{actionKeyword}}",
+  "Name": "MyFlowPlugin",
+  "Description": "{{description}}",
+  "Author": "{{author}}",
+  "Version": "1.0.0",
+  "Language": "csharp",
+  "Website": "https://github.com/{{author}}/Flow.Launcher.Plugin.MyFlowPlugin",
+  "ExecuteFileName": "Flow.Launcher.Plugin.MyFlowPlugin.dll",
+  "IcoPath": "icon.png"
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "strict": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "target": "ES2018",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "stripInternal": true
+  }
+}

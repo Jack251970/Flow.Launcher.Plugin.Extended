@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <AssemblyName>Flow.Launcher.Plugin.MyFlowPlugin</AssemblyName>
+        <PackageId>Flow.Launcher.Plugin.MyFlowPlugin</PackageId>
+        <Authors>{{author}}</Authors>
+        <PackageProjectUrl>https://github.com/{{author}}/Flow.Launcher.Plugin.MyFlowPlugin</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/{{author}}/Flow.Launcher.Plugin.MyFlowPlugin</RepositoryUrl>
+        <PackageTags>flow-launcher flow-plugin</PackageTags>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UseWpf>true</UseWpf>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="plugin.json" CopyToOutputDirectory="PreserveNewest"/>
+        <Content Include="icon.png" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Flow.Launcher.Plugin.Extended" Version="1.0.0"/>
+        <PackageReference
+                Include="Flow.Launcher.Plugin.Extended.SourceGen" Version="1.0.0"
+                ReferenceOutputAssembly="false"
+                OutputItemType="Analyzer"
+        />
+        <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" PrivateAssets="All" />
+    </ItemGroup>
+
+</Project>

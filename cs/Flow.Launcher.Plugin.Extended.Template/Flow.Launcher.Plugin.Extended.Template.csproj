@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include=".template.config\template.json" />
+      <Content Include="common-files\.github\workflows\Release.yml" />
+      <Content Include="common-files\Flow.Launcher.Plugin.MyFlowPlugin.csproj" />
+    </ItemGroup>
+
+</Project>

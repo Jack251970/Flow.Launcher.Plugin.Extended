@@ -1,0 +1,13 @@
+{
+  "$schema": "https://www.flowlauncher.com/schemas/plugin.schema.json",
+  "ID": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaab",
+  "Name": "My JSON RPC 2",
+  "Description": "",
+  "Author": "Me :)",
+  "Version": "1.0.0",
+  "Language": "javascript_v2",
+  "Website": "https://no",
+  "ExecuteFileName": "index.js",
+  "IcoPath": "icon.png",
+  "ActionKeywords": ["rpc2"]
+}

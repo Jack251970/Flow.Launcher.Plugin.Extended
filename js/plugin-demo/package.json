@@ -1,0 +1,16 @@
+{
+  "name": "plugin-demo",
+  "version": "1.0.0",
+  "author": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^22.8.7",
+    "typescript": "^5.6.3"
+  },
+  "description": "",
+  "license": "MIT",
+  "scripts": {
+    "watch": "node ../flow-launcher-extended-plugin-builder/index.js",
+    "typecheck": "tsc index.js"
+  }
+}

@@ -1,0 +1,10 @@
+﻿<Solution>
+  <Project Path="Flow.Launcher.Plugin.Extended.SourceGen\Flow.Launcher.Plugin.Extended.SourceGen.csproj" Type="Classic C#" />
+  <Project Path="Flow.Launcher.Plugin.Extended.Template\Flow.Launcher.Plugin.Extended.Template.csproj" Type="Classic C#" />
+  <Project Path="Flow.Launcher.Plugin.Extended\Flow.Launcher.Plugin.Extended.csproj" Type="Classic C#" />
+  <Folder Name="Files">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path=".gitignore" />
+  </Folder>
+</Solution>
