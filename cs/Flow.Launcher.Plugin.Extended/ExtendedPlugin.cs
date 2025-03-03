@@ -12,11 +12,21 @@ namespace Flow.Launcher.Plugin.Extended;
 [PublicAPI]
 public partial class ExtendedPlugin : IAsyncPlugin, IContextMenu, ISettingProvider {
     protected PluginMetadata PluginMetadata = null!;
-    protected readonly IPublicAPI Api = ExtendedExtensions.Api;
+    protected IPublicAPI Api = null!;
 
     private PluginQueryMethod[] _queryMethods = null!;
     private Dictionary<string, MethodInfo> _contextMenus = new();
     private MethodInfo? _createSettingsUiMethod;
+
+    public ExtendedPlugin() {
+        try {
+            Api = ExtendedExtensions.Api;
+        }
+        catch (InvalidOperationException) {
+            // We can't get IPublicAPI instance in plugin constructors for older versions,
+            // So we need to initialize later in InitAsync method.
+        }
+    }
 
     public async Task<List<Result>> QueryAsync(Query query, CancellationToken token) {
         object? result = null;
@@ -155,6 +165,7 @@ public partial class ExtendedPlugin : IAsyncPlugin, IContextMenu, ISettingProvid
 
     public Task InitAsync(PluginInitContext context) {
         PluginMetadata = context.CurrentPluginMetadata;
+        Api ??= context.API;
 
         var type = GetType();
 

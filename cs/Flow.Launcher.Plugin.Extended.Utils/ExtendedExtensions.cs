@@ -4,8 +4,7 @@ using JetBrains.Annotations;
 namespace Flow.Launcher.Plugin.Extended.Utils;
 
 [PublicAPI]
-public static class ExtendedExtensions
-{
+public static class ExtendedExtensions {
     /// <summary>
     /// <see cref="IPublicAPI"/> instance.
     /// </summary>
@@ -15,7 +14,7 @@ public static class ExtendedExtensions
     /// Get <see cref="IPublicAPI"/> instance even in plugin constructors.
     /// </summary>
     /// <remarks>
-    /// From <see cref="Flow.Launcher.Plugin"/> 4.5.0, we can use <see cref="Ioc"/> to get <see cref="IPublicAPI"/> instance.
+    /// Only availbale for Flow Launcher 1.20.0 and later.
     /// </remarks>
     public static IPublicAPI Api => _api ??= Ioc.Default.GetRequiredService<IPublicAPI>();
 }
