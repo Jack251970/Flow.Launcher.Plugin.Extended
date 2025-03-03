@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using Flow.Launcher.Plugin.Extended.Attributes;
+using Flow.Launcher.Plugin.Extended.Utils;
 using JetBrains.Annotations;
 
 namespace Flow.Launcher.Plugin.Extended;
@@ -11,7 +12,7 @@ namespace Flow.Launcher.Plugin.Extended;
 [PublicAPI]
 public partial class ExtendedPlugin : IAsyncPlugin, IContextMenu, ISettingProvider {
     protected PluginMetadata PluginMetadata = null!;
-    protected IPublicAPI Api = null!;
+    protected readonly IPublicAPI Api = ExtendedExtensions.Api;
 
     private PluginQueryMethod[] _queryMethods = null!;
     private Dictionary<string, MethodInfo> _contextMenus = new();
@@ -154,7 +155,6 @@ public partial class ExtendedPlugin : IAsyncPlugin, IContextMenu, ISettingProvid
 
     public Task InitAsync(PluginInitContext context) {
         PluginMetadata = context.CurrentPluginMetadata;
-        Api = context.API;
 
         var type = GetType();
 
